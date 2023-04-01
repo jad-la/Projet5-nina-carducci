@@ -61,9 +61,29 @@
     $(".gallery").on("click", ".mg-prev", () =>
       $.fn.mauGallery.methods.prevImage(options.lightboxId)
     );
+    
     $(".gallery").on("click", ".mg-next", () =>
       $.fn.mauGallery.methods.nextImage(options.lightboxId)
     );
+
+    $(".gallery-item").on("keydown", function(e) {
+      if (e.keyCode === 13) { 
+        e.preventDefault(); 
+        $(this).click(); 
+      }
+    });
+    $(".mg-prev").keydown(function(e) {
+      if (e.keyCode == 13) { 
+        e.preventDefault();// gauche
+        $.fn.mauGallery.methods.prevImage(options.lightboxId);
+      } 
+    });
+    $(".mg-next").keydown(function(e) {
+      if (e.keyCode == 13) { 
+        e.preventDefault();// gauche
+        $.fn.mauGallery.methods.nextImage(options.lightboxId);
+      } 
+    });
   };
   $.fn.mauGallery.methods = {
     createRowWrapper(element) {
@@ -204,13 +224,13 @@
                         <div class="modal-body">
                             ${
                               navigation
-                                ? '<div class="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;"><</div>'
+                                ? '<div class="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;" tabindex="0"><</div>'
                                 : '<span style="display:none;" />'
                             }
                             <img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clique"/>
                             ${
                               navigation
-                                ? '<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;}">></div>'
+                                ? '<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;}" tabindex="0">></div>'
                                 : '<span style="display:none;" />'
                             }
                         </div>
@@ -234,6 +254,12 @@
       } else {
         console.error(`Unknown tags position: ${position}`);
       }
+      $('.nav-link').on('keydown', function(e) {
+        if (e.keyCode === 13) {
+          e.preventDefault(); 
+          $(this).click(); 
+        }
+      });
     },
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
@@ -258,5 +284,6 @@
         }
       });
     }
+    
   };
 })(jQuery);

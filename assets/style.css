@@ -103,6 +103,9 @@ body {
 .gallery .nav {
 	justify-content: center;
 }
+li.nav-item {
+    cursor: pointer;
+}
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
 	color: #262626;
 	background-color: #BEB45A;

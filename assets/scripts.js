@@ -22,5 +22,5 @@ function loadCSS(href) {
   
   window.onload = function() {
     loadCSS("./assets/bootstrap/bootstrap.min.css");
-    loadCSS("./assets/style.css");
+    loadCSS("./assets/style.min.css");
   };

@@ -21,6 +21,6 @@ function loadCSS(href) {
   }
   
   window.onload = function() {
-    loadCSS("./assets/bootstrap/bootstrap.css");
+    loadCSS("./assets/bootstrap/bootstrap.min.css");
     loadCSS("./assets/style.css");
   };

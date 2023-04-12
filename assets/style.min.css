@@ -11,6 +11,7 @@ body{max-width:1920px;margin:auto}
 .picture.left::before{content:' ';background-color:#E5975F;width:374px;height:329px;position:absolute;bottom:0;left:0;z-index:-1}
 .picture{flex:1;margin:0 20px;z-index:0}
 .picture img{width:100%;height:100%;}
+.right img{width:100%;height:298px;}
 #about-me{flex:2}
 .about-me__title{margin-top:1em;margin-bottom:60px;font-size:30px}
 .about-me__introduction{font-family:'Spectral';font-weight:800;font-style:italic;width:60%}
@@ -41,6 +42,7 @@ form textarea{width:100%;background-color:transparent;border:solid 1px;height:5e
 input[type="submit"]{background-color:#BEB45A;padding:.5em 1em}
 @media all and (max-width: 1180px) {
 .picture{flex:2}
+.right img{width:100%;height:auto;}
 #about,#contact .container{align-items:center}
 .about-me__title{margin-top:0;margin-bottom:1em}
 #about-me h6,#about-me p{width:100%}
@@ -49,6 +51,7 @@ input[type="submit"]{background-color:#BEB45A;padding:.5em 1em}
 #about{flex-direction:column}
 .picture{width:50%}
 .picture.left::before{width:100%;height:30%;position:absolute;bottom:auto;top:0;left:0;z-index:-1}
+.right img{width:100%;height:30%;}
 .about-me__title{text-align:center;margin-top:1em}
 #services .container{flex-direction:column}
 .service{width:100%;max-width:100%;height:auto;margin:2em 0}
